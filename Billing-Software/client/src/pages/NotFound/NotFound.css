@@ -1,0 +1,179 @@
+/* ---------------------------------------------------------
+   404 / NOT FOUND — SkyLedgerX Themed
+----------------------------------------------------------*/
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px;
+    box-sizing: border-box;
+
+    /* same animated gradient as the app */
+    background: linear-gradient(135deg, #1e2a47, #3a6ea5, #5c99d6);
+    background-size: 300% 300%;
+    animation: bgFloat 12s ease-in-out infinite alternate;
+    overflow: hidden;
+}
+
+@keyframes bgFloat {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* center card with glass morphism */
+.not-found-content {
+    width: 100%;
+    max-width: 820px;
+    padding: 40px;
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(14px) saturate(120%);
+    border: 1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+      0 18px 40px rgba(0,0,0,0.45),
+      inset 0 0 18px rgba(255,255,255,0.02);
+
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* decorative large 404 number */
+.not-found-title {
+    font-size: 140px;
+    line-height: 1;
+    margin: 0;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow:
+      0 4px 18px rgba(0,0,0,0.6),
+      0 0 28px rgba(0,170,255,0.25);
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    min-width: 220px;
+    text-align: center;
+}
+
+/* Add a subtle neon gradient inside the number */
+.not-found-title {
+    background: linear-gradient(180deg, #ffffff 0%, #d6f5ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 8px 24px rgba(0,170,255,0.12));
+}
+
+/* right side text block */
+.not-found-text {
+    max-width: 420px;
+    color: #e9f5ff;
+}
+
+/* subtitle and message */
+.not-found-subtitle {
+    font-size: 28px;
+    margin: 0 0 12px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.2px;
+    text-shadow: 0 0 12px rgba(0,170,255,0.12);
+}
+
+.not-found-message {
+    margin: 0 0 22px;
+    font-size: 16px;
+    color: #dbeefc;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+/* CTA button — glass + neon */
+.not-found-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.03));
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+    text-decoration: none; /* if anchor */
+}
+
+/* icon inside button */
+.not-found-button i {
+    display: inline-block;
+    font-size: 1.05rem;
+    transform: translateY(-1px);
+}
+
+/* hover */
+.not-found-button:hover {
+    transform: translateY(-4px);
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    box-shadow: 0 18px 40px rgba(0,114,255,0.32), 0 0 28px rgba(0,170,255,0.18);
+}
+
+/* secondary action link */
+.not-found-link {
+    display: inline-block;
+    margin-left: 12px;
+    color: rgba(235,245,255,0.9);
+    opacity: 0.9;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* small helper text */
+.not-found-hint {
+    margin-top: 10px;
+    font-size: 13px;
+    color: rgba(235,245,255,0.8);
+    opacity: 0.9;
+}
+
+/* responsive sizing */
+@media (max-width: 900px) {
+    .not-found-content {
+        padding: 26px;
+        gap: 18px;
+    }
+
+    .not-found-title {
+        font-size: 100px;
+        min-width: 160px;
+    }
+
+    .not-found-subtitle {
+        font-size: 22px;
+    }
+
+    .not-found-message {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 520px) {
+    .not-found-content {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .not-found-title {
+        font-size: 80px;
+        margin-bottom: 6px;
+    }
+
+    .not-found-text { width: 100%; }
+    .not-found-button { width: 100%; justify-content: center; }
+}

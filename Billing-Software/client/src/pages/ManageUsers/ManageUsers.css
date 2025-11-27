@@ -1,0 +1,138 @@
+/* ---------------------------------------------------------
+   USERS PAGE — Animated Premium Gradient Background
+----------------------------------------------------------*/
+.users-container {
+    display: flex;
+    gap: 25px;
+    padding: 25px;
+    height: calc(100vh - 5rem);
+    box-sizing: border-box;
+
+    background: linear-gradient(135deg, #1e2a47, #3a6ea5, #5c99d6);
+    background-size: 300% 300%;
+    animation: usersGradient 12s ease-in-out infinite alternate;
+}
+
+@keyframes usersGradient {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* ---------------------------------------------------------
+   GLASS COLUMN SHARED STYLE (Left + Right Panels)
+----------------------------------------------------------*/
+.left-column,
+.right-column {
+    border-radius: 16px;
+    padding: 22px;
+    height: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    /* Beautiful glass effect */
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    /* shadow */
+    box-shadow:
+        0 12px 32px rgba(0, 0, 0, 0.28),
+        inset 0 0 20px rgba(255, 255, 255, 0.06);
+
+    transition: 0.3s ease;
+}
+
+/* 3D hover lift + glow */
+.left-column:hover,
+.right-column:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.38),
+        0 0 22px rgba(0, 170, 255, 0.55);
+}
+
+/* Column ratios */
+.left-column { flex: 0.7; }
+.right-column { flex: 0.3; }
+
+/* ---------------------------------------------------------
+   LEFT COLUMN – MAIN USERS LIST / TABLE
+----------------------------------------------------------*/
+.left-column {
+    overflow-y: auto;
+    color: #eef6ff;
+}
+
+.left-column::-webkit-scrollbar {
+    width: 6px;
+}
+
+.left-column::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+}
+
+/* ---------------------------------------------------------
+   RIGHT COLUMN – USER INFO / ACTIONS PANEL
+----------------------------------------------------------*/
+.right-column {
+    overflow-y: auto;
+    color: #eef6ff;
+}
+
+.right-column::-webkit-scrollbar {
+    width: 6px;
+}
+
+.right-column::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+}
+
+/* ---------------------------------------------------------
+   USER CARD (for individual user elements)
+----------------------------------------------------------*/
+.user-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+
+    backdrop-filter: blur(12px);
+
+    color: #f1f5f9;
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 24px rgba(0,0,0,0.32),
+        inset 0 0 12px rgba(255,255,255,0.06);
+
+    transition: 0.25s ease;
+}
+
+.user-card:hover {
+    transform: scale(1.03) translateY(-3px);
+    background: rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 12px 28px rgba(0,0,0,0.45),
+        0 0 18px rgba(0,170,255,0.45);
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE DESIGN
+----------------------------------------------------------*/
+@media (max-width: 900px) {
+    .users-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-column,
+    .right-column {
+        height: auto;
+        width: 100%;
+    }
+}

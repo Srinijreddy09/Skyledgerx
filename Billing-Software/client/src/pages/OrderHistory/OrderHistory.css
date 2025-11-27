@@ -1,0 +1,136 @@
+/* ---------------------------------------------------------
+   ORDERS HISTORY — Animated Gradient Background
+----------------------------------------------------------*/
+.orders-history-container {
+    padding: 30px;
+    height: calc(100vh - 5rem);
+    box-sizing: border-box;
+
+    background: linear-gradient(135deg, #1e2a47, #3a6ea5, #5c99d6);
+    background-size: 300% 300%;
+    animation: ordersGradient 12s ease-in-out infinite alternate;
+
+    color: #eef6ff;
+}
+
+@keyframes ordersGradient {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* ---------------------------------------------------------
+   TITLE — Glass Glow Effect
+----------------------------------------------------------*/
+.orders-history-container h2 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+
+    color: #ffffff;
+    letter-spacing: 1px;
+
+    text-shadow: 0 0 18px rgba(0, 170, 255, 0.7);
+}
+
+/* ---------------------------------------------------------
+   TABLE CONTAINER WITH GLASS PANEL
+----------------------------------------------------------*/
+.table-responsive {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+
+    padding: 20px;
+    border-radius: 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.28),
+        inset 0 0 18px rgba(255, 255, 255, 0.06);
+
+    overflow-x: auto;
+}
+
+/* ---------------------------------------------------------
+   PREMIUM TABLE STYLE
+----------------------------------------------------------*/
+.table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+    color: #eaf3ff;
+}
+
+/* Table Header */
+.table th {
+    padding: 14px;
+    font-weight: 700;
+    font-size: 0.95rem;
+
+    background: rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+    backdrop-filter: blur(6px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Table Body Cells */
+.table td {
+    padding: 14px;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    color: #e2ecf8;
+}
+
+/* Row Hover Glow */
+.table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transition: 0.2s ease-in-out;
+}
+
+/* ---------------------------------------------------------
+   BADGE STYLE (Status)
+----------------------------------------------------------*/
+.badge {
+    padding: 6px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    color: #fff;
+    text-shadow: 0 0 4px rgba(0,0,0,0.3);
+}
+
+/* Custom badge themes */
+.badge-paid {
+    background: rgba(0, 200, 120, 0.8);
+    box-shadow: 0 0 10px rgba(0,255,150,0.4);
+}
+
+.badge-pending {
+    background: rgba(255, 180, 0, 0.8);
+    box-shadow: 0 0 10px rgba(255,200,0,0.4);
+}
+
+.badge-cancelled {
+    background: rgba(255, 60, 60, 0.8);
+    box-shadow: 0 0 10px rgba(255,80,80,0.4);
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE FIXES
+----------------------------------------------------------*/
+@media (max-width: 768px) {
+    .table td,
+    .table th {
+        white-space: nowrap;
+    }
+
+    .orders-history-container {
+        padding: 18px;
+        height: auto;
+    }
+
+    .table-responsive {
+        padding: 15px;
+    }
+}
